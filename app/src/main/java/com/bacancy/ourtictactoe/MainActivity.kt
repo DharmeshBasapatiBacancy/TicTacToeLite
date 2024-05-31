@@ -30,45 +30,62 @@ class MainActivity : AppCompatActivity() {
             tvBox2.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox2.text =  checkGameStatus(tvBox2.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             tvBox3.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox3.text = checkGameStatus(tvBox3.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             tvBox4.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox4.text = checkGameStatus(tvBox4.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             tvBox5.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox5.text = checkGameStatus(tvBox5.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             tvBox6.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox6.text = checkGameStatus(tvBox6.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             tvBox7.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox7.text = checkGameStatus(tvBox7.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             tvBox8.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox8.text = checkGameStatus(tvBox8.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             tvBox9.setOnClickListener {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox9.text = checkGameStatus(tvBox9.text, setCurrentValueToBox)
+                currentEntry = setCurrentValueToBox
             }
 
             btnStartResetGame.setOnClickListener {
                 currentEntry = ""
+                tvBox1.text="";
+                tvBox2.text="";
+                tvBox3.text="";
+                tvBox4.text="";
+                tvBox5.text="";
+                tvBox6.text="";
+                tvBox7.text="";
+                tvBox8.text="";
+                tvBox9.text="";
 
             }
 
