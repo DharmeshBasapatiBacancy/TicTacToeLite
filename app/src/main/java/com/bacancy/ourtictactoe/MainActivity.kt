@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     //first entry will be false "X"
     private lateinit var binding: ActivityMainBinding
     private var currentEntry = ""
-
+    private var setCurrentValueToBox = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,46 +21,48 @@ class MainActivity : AppCompatActivity() {
     private fun handleClicks() {
         binding.apply {
             tvBox1.setOnClickListener {
-                tvBox1.text = checkCurrentEntry()
-                checkGameStatus()
-
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox1.text,setCurrentValueToBox)
             }
 
             tvBox2.setOnClickListener {
-                tvBox2.text = checkCurrentEntry()
-
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox2.text, setCurrentValueToBox)
             }
 
             tvBox3.setOnClickListener {
-                tvBox3.text = checkCurrentEntry()
-
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox3.text, setCurrentValueToBox)
             }
 
             tvBox4.setOnClickListener {
-                tvBox4.text = checkCurrentEntry()
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox4.text, setCurrentValueToBox)
             }
 
             tvBox5.setOnClickListener {
-                tvBox5.text = checkCurrentEntry()
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox5.text, setCurrentValueToBox)
             }
 
             tvBox6.setOnClickListener {
-                tvBox6.text = checkCurrentEntry()
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox6.text, setCurrentValueToBox)
             }
 
             tvBox7.setOnClickListener {
-                tvBox7.text = checkCurrentEntry()
-
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox7.text, setCurrentValueToBox)
             }
 
             tvBox8.setOnClickListener {
-                tvBox8.text = checkCurrentEntry()
-
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox8.text, setCurrentValueToBox)
             }
 
             tvBox9.setOnClickListener {
-                tvBox9.text = checkCurrentEntry()
-
+                setCurrentValueToBox = checkCurrentEntry()
+                checkGameStatus(tvBox9.text, setCurrentValueToBox)
             }
 
             btnStartResetGame.setOnClickListener {
@@ -71,8 +73,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkGameStatus() {
-
+    private fun checkGameStatus(text: CharSequence, setCurrentValueToBox: String) {
+//        if (setCurrentValueToBox.equals("FALSE"))
+//        {
+//            //set value to "X" if False
+//        }else{
+//            //set value to "0" if TRUE
+//        }
     }
 
     private fun checkCurrentEntry(): String {
