@@ -3,6 +3,7 @@ package com.bacancy.ourtictactoe
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import com.bacancy.ourtictactoe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                 setCurrentValueToBox = checkCurrentEntry()
                 tvBox1.text = checkGameStatus(tvBox1.text,setCurrentValueToBox)
                 currentEntry = setCurrentValueToBox
+                checkWinningStatus()
             }
 
             tvBox2.setOnClickListener {
@@ -92,26 +94,39 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkGameStatus(text: CharSequence, setCurrentValueToBox: String) : String {
-        return if (setCurrentValueToBox.equals("FALSE")) {
-            //set value to "X" if False
-            Log.e("TAG", "checkGameStatus: $text $setCurrentValueToBox", )
-            "X"
-        }else{
-            //set value to "0" if TRUE
-            Log.e("TAG", "checkGameStatus: $text $setCurrentValueToBox", )
-            "0"
+    private fun checkWinningStatus() {
+        binding.apply {
+
+            if (checkForWinner(tvBox1, tvBox2, tvBox3, symbol = "X")) {
+                tvPlayerTurn.text = "X is won"
+            } else if (checkForWinner(tvBox1, tvBox2, tvBox3, symbol = "0")) {
+                tvPlayerTurn.text = "0 is won"
+            }
+
+            if (checkForWinner(tvBox4, tvBox5, tvBox6, symbol = "X")) {
+                tvPlayerTurn.text = "X is won"
+            } else if (checkForWinner(tvBox4, tvBox5, tvBox6, symbol = "0")) {
+                tvPlayerTurn.text = "0 is won"
+            }
         }
     }
 
+    fun checkForWinner(vararg textViews: TextView, symbol: String): Boolean {
+        return textViews.all { it.text.toString() == symbol }
+    }
+
+    private fun checkGameStatus(text: CharSequence, setCurrentValueToBox: String) : String {
+        return listOf("X", "0").random()
+    }
+
     private fun checkCurrentEntry(): String {
-        if (currentEntry.isEmpty()) {
+        return if (currentEntry.isEmpty()) {
             currentEntry = Player.FALSE.toString()
-            return Player.FALSE.toString()
+            Player.FALSE.toString()
         } else if (currentEntry.equals(Player.FALSE)) {
-            return Player.TRUE.toString()
+            Player.TRUE.toString()
         } else {
-            return Player.FALSE.toString()
+            Player.FALSE.toString()
         }
     }
 }
